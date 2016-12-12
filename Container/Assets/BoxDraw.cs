@@ -141,13 +141,13 @@ public class BoxDraw : MonoBehaviour {
             sonuc_sira.Add(item);
         }
 
-        Kutu katmanyan = new Kutu(katman.en - referans.en, (referans.boy), blokDerinlik, true);
+        Kutu katmanyan = new Kutu(katman.en - referans.en, katman.boy, blokDerinlik, true);
         katmanyan.konumAyarla(katman.x, (referans.en + katman.y), katman.z);
 
         Kutu katmanon = new Kutu(katman.en, katman.boy, (katman.derinlik - blokDerinlik), true);
         katmanon.konumAyarla((blokDerinlik + katman.x), katman.y, katman.z);
 
-        Kutu katmanust = new Kutu(katman.en, (katman.boy - referans.boy), blokDerinlik, true);
+        Kutu katmanust = new Kutu(referans.en, (katman.boy - referans.boy), blokDerinlik, true);
         katmanust.konumAyarla(katman.x, katman.y, (katman.z + referans.boy));
 
 
