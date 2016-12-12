@@ -13,12 +13,12 @@ public class BoxDraw : MonoBehaviour {
     void Start () {
         System.Random rnd = new System.Random();
 
-        for (int i = 1; i < 1000; i++)
+        for (int i = 1; i < 500; i++)
         {
             int j = rnd.Next(1, 10);
 
-            int en = rnd.Next(20, 30);
-            int boy = rnd.Next(10, 40);
+            int en = rnd.Next(20, 70);
+            int boy = rnd.Next(10, 90);
             int derinlik = rnd.Next(15, 40);
 
             for (int a = 0; a < j; a++)
@@ -151,9 +151,9 @@ public class BoxDraw : MonoBehaviour {
         katmanust.konumAyarla(katman.x, katman.y, (katman.z + referans.boy));
 
 
-        yerlestir(katmanust);
-        yerlestir(katmanon);
         yerlestir(katmanyan);
+        yerlestir(katmanon);
+        yerlestir(katmanust);
 
     }
 
