@@ -14,13 +14,13 @@ public class BoxDraw : MonoBehaviour {
 
         System.Random rnd = new System.Random();
 
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 50; i++)
         {
-            int j = rnd.Next(1, 500);
+            int j = rnd.Next(1, 25);
 
-            int en = rnd.Next(20, 80);
-            int boy = rnd.Next(20,80);
-            int derinlik = rnd.Next(20, 80);
+            int en = rnd.Next(30, 100);
+            int boy = rnd.Next(30,100);
+            int derinlik = rnd.Next(50,110);
             Color color = new Color(((float)rnd.Next(20, 80)) / 50, ((float)rnd.Next(20, 80) / 50), ((float)rnd.Next(20, 80) / 50));
             for (int a = 0; a < j; a++)
             {
