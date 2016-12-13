@@ -49,4 +49,30 @@ class Kutu
         this.y = _y ;
         this.z = _z ;
     }
+
+    public Kutu kutuCevir(int cevirici)
+    {// en boy derinkik
+        switch (cevirici)
+        {
+            case 1:               
+                    float ara = this.en;
+                    this.en = this.boy;
+                    this.boy = ara;
+                break;
+            case 2:
+                    float aradeger = this.en;
+                    this.en = this.derinlik;
+                    this.derinlik = aradeger;
+                break;
+            case 3:
+                    float araveri = this.boy;
+                    this.boy = this.derinlik;
+                    this.derinlik = araveri;
+                break;
+            default:
+                break;
+        }
+        return this;
+    }
+
 }
