@@ -11,28 +11,30 @@ public class BoxDraw : MonoBehaviour {
 
     static List<Kutu> sonuc_sira = new List<Kutu>();
     void Start () {
+
         System.Random rnd = new System.Random();
 
-        for (int i = 1; i < 500; i++)
+        for (int i = 1; i < 10; i++)
         {
-            int j = rnd.Next(1, 10);
+            int j = rnd.Next(1, 500);
 
-            int en = rnd.Next(20, 70);
-            int boy = rnd.Next(10, 90);
-            int derinlik = rnd.Next(15, 40);
-
+            int en = rnd.Next(20, 80);
+            int boy = rnd.Next(20,80);
+            int derinlik = rnd.Next(20, 80);
+            Color color = new Color(((float)rnd.Next(20, 80)) / 50, ((float)rnd.Next(20, 80) / 50), ((float)rnd.Next(20, 80) / 50));
             for (int a = 0; a < j; a++)
             {
-                kutular.Add(new Kutu(en, boy, derinlik, false));
+                kutular.Add(new Kutu(en, boy, derinlik, false,color));
             }
         }
         
 
         
         Debug.Log("kutular sayisi: " + kutular.Count);
-        Kutu katman = new Kutu(234, 234, 1200, true);
+        Kutu katman = new Kutu(234, 234, 1200, true, new Color(1, 1, 1));
         katman.konumAyarla(0, 0, 0);
         GameObject konteyner = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
         konteyner.transform.position = new Vector3(katman.y + (katman.en / 2), katman.z + (katman.boy / 2), katman.x + (katman.derinlik / 2));
         konteyner.transform.localScale = new Vector3(katman.en, katman.boy, katman.derinlik);
         yerlestir(katman);
@@ -60,9 +62,9 @@ public class BoxDraw : MonoBehaviour {
         foreach (var item in sonuc_sira)
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cube.transform.position = new Vector3(item.y + (item.en /2), item.z + (item.boy/2), item.x + (item.derinlik/2));
-            cube.transform.localScale = new Vector3(item.en, item.boy, item.derinlik);
-           // cube.GetComponent<Material>().color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value, 1.0f);
+            cube.transform.position = new Vector3(item.y + (item.en / 2), item.z + (item.boy / 2), item.x + (item.derinlik / 2));
+            cube.transform.localScale = new Vector3((item.en - 1), (item.boy - 1), (item.derinlik - 1));
+            cube.GetComponent<Renderer>().material.SetColor("_Color", item.color);
         }
         Debug.Log("Sonuc Sayisi :" + sonuc_sira.Count);
         Debug.Log("kutu hacmi :" + sonuc_sira.Sum(m => m.hacim));
@@ -141,13 +143,13 @@ public class BoxDraw : MonoBehaviour {
             sonuc_sira.Add(item);
         }
 
-        Kutu katmanyan = new Kutu(katman.en - referans.en, katman.boy, blokDerinlik, true);
+        Kutu katmanyan = new Kutu(katman.en - referans.en, katman.boy, blokDerinlik, true, new Color(1,1,1));
         katmanyan.konumAyarla(katman.x, (referans.en + katman.y), katman.z);
 
-        Kutu katmanon = new Kutu(katman.en, katman.boy, (katman.derinlik - blokDerinlik), true);
+        Kutu katmanon = new Kutu(katman.en, katman.boy, (katman.derinlik - blokDerinlik), true, new Color(1, 1, 1));
         katmanon.konumAyarla((blokDerinlik + katman.x), katman.y, katman.z);
 
-        Kutu katmanust = new Kutu(referans.en, (katman.boy - referans.boy), blokDerinlik, true);
+        Kutu katmanust = new Kutu(referans.en, (katman.boy - referans.boy), blokDerinlik, true, new Color(1, 1, 1));
         katmanust.konumAyarla(katman.x, katman.y, (katman.z + referans.boy));
 
 

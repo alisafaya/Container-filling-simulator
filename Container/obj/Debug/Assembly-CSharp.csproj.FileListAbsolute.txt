@@ -19,3 +19,6 @@ C:\Users\Casemice\Desktop\Container\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\Casemice\Desktop\Container\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Casemice\Desktop\Container\obj\Debug\Assembly-CSharp.dll
 C:\Users\Casemice\Desktop\Container\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Casemice\Documents\sayisal-analiz\Container\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Casemice\Documents\sayisal-analiz\Container\obj\Debug\Assembly-CSharp.dll
+C:\Users\Casemice\Documents\sayisal-analiz\Container\obj\Debug\Assembly-CSharp.pdb

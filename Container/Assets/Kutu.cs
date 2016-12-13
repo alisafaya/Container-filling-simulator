@@ -1,4 +1,6 @@
 ﻿using System;
+using UnityEngine;
+
 class Kutu
 {
     public float en { get; set; }
@@ -8,8 +10,9 @@ class Kutu
     public float y { get; set; }
     public float z { get; set; }
     public float hacim { get; set; }
+    public Color color { get; set; }
 
-    public Kutu(float en, float boy, float derinlik, bool katmanmi)
+    public Kutu(float en, float boy, float derinlik, bool katmanmi , Color color)
     {
        // float tolerans = katmanmi == true ? 0 : -2;
         if (!katmanmi)
@@ -37,6 +40,7 @@ class Kutu
         this.en = en;
         this.boy = boy;
         this.derinlik = derinlik;
+        this.color = color;
 
     }
     public void konumAyarla(float _x, float _y, float _z)
