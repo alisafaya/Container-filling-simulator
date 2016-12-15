@@ -3,6 +3,7 @@ using UnityEngine;
 
 class Kutu
 {
+    public string kod { get; set; }
     public float en { get; set; }
     public float boy { get; set; }
     public float derinlik { get; set; }
@@ -12,7 +13,7 @@ class Kutu
     public float hacim { get; set; }
     public Color color { get; set; }
 
-    public Kutu(float en, float boy, float derinlik, bool katmanmi , Color color)
+    public Kutu(string _kod,float en, float boy, float derinlik, bool katmanmi , Color color)
     {
        // float tolerans = katmanmi == true ? 0 : -2;
         if (!katmanmi)
@@ -36,6 +37,7 @@ class Kutu
                 boy = gecici;
             } 
         }
+        this.kod = _kod;
         this.hacim = en * boy * derinlik;
         this.en = en;
         this.boy = boy;
@@ -43,6 +45,7 @@ class Kutu
         this.color = color;
 
     }
+    
     public void konumAyarla(float _x, float _y, float _z)
     {
         this.x = _x;        

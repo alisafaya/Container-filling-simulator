@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\BoxDraw.cs" />
      <Compile Include="Assets\Kutu.cs" />
+     <None Include="Assets\veriler.txt" />
+     <None Include="Assets\rapor.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
